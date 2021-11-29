@@ -1,0 +1,34 @@
+---
+description: 'Shareable component for adding Tailwind config to webpack in a Bit env'
+labels: ['react', 'shareable', 'tailwind', 'webpack']
+---
+
+# Overview
+
+This component contains a Bit webpack transformer, to add Tailwind support to any Bit env.
+
+## API
+
+The transformer takes in a `tailwindConfigPath` string parameter, which should contain the path to the tailwind config (i.e. `tailwind.config.js`), and outputs a pair of webpack transformers for
+configuring a Bit webpack set up for Tailwind.
+
+## Usage
+
+```js
+const { 
+    previewConfigTransformer: twPreviewTransformer, 
+    devServerConfigTransformer: twDevServerTransformer 
+} = UseTailwindTransformer(require.resolve('./tailwind/tailwind.config.js')); // e.g. if the tailwing config is internal to the env
+
+[...]
+
+      react.useWebpack({
+        previewConfig: [twPreviewTransformer],
+        devServerConfig: [twDevServerTransformer],
+      }),
+
+```
+
+## Examples
+
+An example of how to use this component to configure an env's webpack can be found in the [`env-with-tailwind`](http://localhost:3000/tailwind/environments/env-with-tailwind) demo env.
