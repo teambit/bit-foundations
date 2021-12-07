@@ -1,0 +1,23 @@
+---
+labels: ['react', 'typescript', 'api-hook-factory']
+description: 'A ApiHookFactory component.'
+---
+
+### Overview
+
+The ApiHookFactory allows creation of rest api hooks to consume any api context based on a provider utilising ApiContextProvider's provider factory.  
+
+Api Hooks created with this factory will connect to and consume the `useXyzContext` of any api context that is based on the [rest-ful API context provider component](@learn-bit-react/movies.context.api-context-base),
+and returns four items for managaing the API calls:
+1. `apiCall` - the function which actually does the API call
+1. `apiData` - the result of the API call
+1. `isLoading` - true while the `apiCall` function is waiting to return
+1. `error` - holds any errors returned by the API call
+
+To create a hook using this factory, supply it with two parameters:
+1. `apiCallConfig` - a `ContextConfigFunction` (see the api context provider linked to above), this function sets the parameters expected for the api call and how
+to stitch them into the url.
+1. `processData` - the function which will be used to process the raw api data to produce the desired output data for our consuming application from the hook .
+
+
+See this component's compositions for an end-to-end usage example for creating a concrete hook with this factory.
