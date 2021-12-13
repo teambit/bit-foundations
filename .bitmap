@@ -9,11 +9,41 @@
  */
 
 {
-    "tailwind/webpack-transformer": {
-        "scope": "bit-foundations.styling",
+    "context/api-context-base": {
+        "scope": "bit-foundations.react",
         "version": "0.0.1",
         "mainFile": "index.ts",
-        "rootDir": "tailwind/webpack-transformer"
+        "rootDir": "react/context/api-context-base"
+    },
+    "gatsby/config/globals": {
+        "scope": "bit-foundations.meta-frameworks",
+        "version": "0.0.1",
+        "mainFile": "index.ts",
+        "rootDir": "meta-frameworks/gatsby/config/globals"
+    },
+    "gatsby/config/webpack-transformer": {
+        "scope": "bit-foundations.meta-frameworks",
+        "version": "0.0.1",
+        "mainFile": "index.ts",
+        "rootDir": "meta-frameworks/gatsby/config/webpack-transformer"
+    },
+    "hooks/api-hook-factory": {
+        "scope": "bit-foundations.react",
+        "version": "0.0.1",
+        "mainFile": "index.ts",
+        "rootDir": "react/hooks/api-hook-factory"
+    },
+    "tailwind/webpack-transformer": {
+        "scope": "bit-foundations.styling",
+        "version": "0.0.2",
+        "mainFile": "index.ts",
+        "rootDir": "styling/tailwind/webpack-transformer"
+    },
+    "templates/styling-templates": {
+        "scope": "bit-foundations.styling",
+        "version": "0.0.2",
+        "mainFile": "index.ts",
+        "rootDir": "styling/styling-templates"
     },
     "$schema-version": "14.9.0"
 }
