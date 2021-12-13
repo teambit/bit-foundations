@@ -10,7 +10,7 @@
     /**
      * the name of the component workspace. used for development purposes.
      **/
-    "name": "my-workspace-name",
+    "name": "Bit Foundations",
     /**
      * set the icon to be shown on the Bit server.
      **/
@@ -39,7 +39,16 @@
     "packageManager": "teambit.dependencies/pnpm",
     "policy": {
       "dependencies": {
+        "@learn-bit-react/movies.models.movie": "0.0.2",
+        "@learn-bit-react/ui-library-wrappers.tailwind.configs.tailwind-config": "0.0.2",
+        "@teambit/dependencies.modules.packages-excluder": "0.0.46",
+        "@teambit/design.ui.buttons.button": "1.13.0",
+        "@teambit/design.ui.input.text": "0.1.5",
         "@teambit/webpack.modules.style-regexps": "0.0.120",
+        "axios": "0.24.0",
+        "jsonpath-plus": "6.0.1",
+        "postcss": "8.4.4",
+        "react-request-hook": "2.1.1",
         "tailwindcss": "2.2.19"
       },
       "peerDependencies": {}
@@ -52,5 +61,29 @@
    * wrap the rule with curly brackets (e.g. `"{ui/*}": {}`)
    * see https://harmony-docs.bit.dev/aspects/variants for more info.
    **/
-  "teambit.workspace/variants": {}
+  "teambit.workspace/variants": {
+    "react": {
+      "defaultScope": "bit-foundations.react",
+      "teambit.react/react": {}
+    },
+    "{templates/**}": {
+      "teambit.harmony/aspect": {}
+    },
+    "meta-frameworks": {
+      "defaultScope": "bit-foundations.meta-frameworks"
+    },
+    "{gatsby/webpack/*}": {
+      "teambit.dependencies/dependency-resolver": {
+        "policy": {
+          "dependencies": {
+            "babel-plugin-remove-graphql-queries": "4.3.0"
+          }
+        }
+      }
+    }
+  },
+  "bit-foundations.styling/templates/styling-templates": {},
+  "teambit.generator/generator": {
+    "bit-foundations.styling/templates/styling-templates": {}
+  }
 }
