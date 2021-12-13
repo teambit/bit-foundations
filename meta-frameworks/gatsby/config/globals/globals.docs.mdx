@@ -1,0 +1,34 @@
+---
+labels: ['gatsby', 'globals']
+description: 'component which registers gatsby globals for rendering gatsby components outside a gatsby app'
+---
+
+# Overview
+
+This component exposes a single function, whose purpose is to register global Gatsby variables to enable rendering of Gatsby components
+outside of a Gatsby app. 
+
+This function can be used, for instance, inside a Bit env's preview file to enable rendering of Gatsby components in Bit compositions.
+
+## Gatsby Globals
+
+### Gatsby's Link overrides
+
+Gatsby Link calls the `enqueue` & `hovering` methods on the global variable ___loader.
+This global object isn't set in non-Gatsby context, requiring you to override it to empty functions (no-op),
+so Gatsby Link doesn't throw errors.
+
+```js
+  globalCtx.___loader = {
+      enqueue: () => {},
+      hovering: () => {},
+    }
+
+```
+
+### Others
+
+This global variable prevents the "__BASE_PATH__ is not defined" error when using Gatsby components outside a Gatsby application..
+```js
+globalCtx.__BASE_PATH__ = "/"
+```

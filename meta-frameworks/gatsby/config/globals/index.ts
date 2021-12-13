@@ -1,0 +1,1 @@
+export { setGatsbyGlobals } from './globals';

@@ -1,0 +1,37 @@
+---
+description: 'A WebpackTransform for introducing support for Gatsby internal components with bit.'
+labels: ['gatsby', 'webpack', 'transform', 'Link', 'image']
+---
+
+# Overview
+
+This component is a shareable webpack transform, which adds Gatsby support to a custom bit env.
+
+> IMPORTANT NOTE: it seems that Gatsby [has an issue](https://github.com/gatsbyjs/gatsby/issues/18048) with using npm or pnpm to install its internal components, so in order for your Gatsby
+setup with Bit to work correctly make sure you set `yarn` as your bit package manager in your `workspace.jsonc` file.
+
+## Precursors
+
+This component assumes that you already have a custom react env in which you can use the steps below to add gatsby support. 
+If you don't yet have a custom react env, see our [docs](https://harmony-docs.bit.dev/aspects/react#customize-environment) for details on how to create one.
+
+## Usage
+
+This component exports two transforms, one for the bit dev server bundle and one for the remote server bundle (preview). Most likely you'll want them to be the same These transforms together customise your env's webpack configuration
+via the UseWebpack function from the core env you are customising.
+
+```js
+// env.main.runtime.ts
+
+import { gatsbyPreviewConfigTransformer, gatsbyDevServerConfigTransformer } from '@bit-foundations/site-frameworks.gatsby.webpack-transforms';
+
+// inside provider function
+  react.useWebpack({
+    previewConfig: [gatsbyPreviewConfigTransformer],
+    devServerConfig: [gatsbyDevServerConfigTransformer],
+  }),
+
+```
+
+
+
