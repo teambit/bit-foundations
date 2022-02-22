@@ -15,6 +15,12 @@
         "mainFile": "index.ts",
         "rootDir": "react/context/api-context-base"
     },
+    "deploy/umd/webpack-transformer": {
+        "scope": "bit-foundations.deploy",
+        "version": "0.0.1",
+        "mainFile": "index.ts",
+        "rootDir": "deploy/umd/webpack-transformer"
+    },
     "gatsby/config/globals": {
         "scope": "bit-foundations.meta-frameworks",
         "version": "0.0.1",
@@ -23,7 +29,7 @@
     },
     "gatsby/config/webpack-transformer": {
         "scope": "bit-foundations.meta-frameworks",
-        "version": "0.0.1",
+        "version": "0.0.2",
         "mainFile": "index.ts",
         "rootDir": "meta-frameworks/gatsby/config/webpack-transformer"
     },
@@ -35,7 +41,7 @@
     },
     "tailwind/webpack-transformer": {
         "scope": "bit-foundations.styling",
-        "version": "0.0.2",
+        "version": "0.0.5",
         "mainFile": "index.ts",
         "rootDir": "styling/tailwind/webpack-transformer"
     },

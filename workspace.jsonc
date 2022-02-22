@@ -80,6 +80,9 @@
           }
         }
       }
+    },
+    "{deploy/**}": {
+      "defaultScope": "bit-foundations.deploy"
     }
   },
   "bit-foundations.styling/templates/styling-templates": {},
