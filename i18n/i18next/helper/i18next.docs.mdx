@@ -1,0 +1,39 @@
+---
+labels: ['i18n', 'i18next', 'utilities']
+description: 'i18next utility functions for implementing in component-driven architecture'
+---
+
+Utility functions and types to make i18next more component-friendly.
+
+Contains the following resources:
+
+1. `addTranslationBundles` (function) - typed function for adding resources to the consuming application's i18next object. Essentially just wraps the `i18n.addResourceBundle` function, but 
+with defaults to the relevant configs for adding as a component.
+1. types relevant for the other resources in the component
+
+## Example usage
+
+```ts
+import i18next from 'i18next';
+
+const en = {
+    language: 'en',
+    namespace: 'translatedText',
+    translations: {
+        'yearsOld': "{{name}} is {{age}} years old now!",
+        'yearsOld_one': "{{name}} is {{age}} year old now!"
+    }
+}
+
+const de = {
+    language: 'de',
+    namespace: 'translatedText',
+    translations: {
+        'yearsOld': "German: {{name}} is {{age}} years old now!",
+        'yearsOld_one': "German: {{name}} is {{age}} year old now!"
+    }
+}
+
+    i18next.init({resources:{}});
+    addTranslationBundles([en, de], i18next);
+```
