@@ -5,7 +5,8 @@ labels: ['UMD', 'webpack', 'transform', 'runtime', 'cdn']
 
 # Overview
 
-This component is a shareable webpack transform, which configures your webpack to produce a UMD output for runtime consumption of your component.
+This component is a shareable webpack transform, which configures your webpack to produce a UMD output for runtime consumption of your component.  
+It can accept an optional argument for the app name, which will be used as the library output name. 
 
 > IMPORTANT NOTE: there can only be one `output` configuration in a webpack object, so this will override any other `output`s configured prrio to running this transform.
 
@@ -25,8 +26,8 @@ import { umdWebpackTransformer } from '@bit-foundations/deploy.umd.webpack-trans
 
 // inside provider function
   react.useWebpack({
-    previewConfig: [umdWebpackTransformer],
-    devServerConfig: [umdWebpackTransformer],
+    previewConfig: [umdWebpackTransformer("optionalAppName")],
+    devServerConfig: [umdWebpackTransformer("optionalAppName")],
   }),
 
 ```
