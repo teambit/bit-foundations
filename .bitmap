@@ -3,9 +3,9 @@
 /**
  * The Bitmap file is an auto generated file used by Bit to track all your Bit components. It maps the component to a folder in your file system.
  * This file should be committed to VCS(version control).
- * Components are listed using their component ID (https://harmony-docs.bit.dev/aspects/component/#component-id).
+ * Components are listed using their component ID (https://bit.dev/docs/components/component-id).
  * If you want to delete components you can use the "bit remove <component-id>" command.
- * See the docs (https://harmony-docs.bit.dev/building-with-bit/removing-components) for more information, or use "bit remove --help".
+ * See the docs (https://bit.dev/docs/components/removing-components) for more information, or use "bit remove --help".
  */
 
 {
@@ -39,17 +39,72 @@
         "mainFile": "index.ts",
         "rootDir": "react/hooks/api-hook-factory"
     },
+    "i18next/helper": {
+        "scope": "bit-foundations.i18n",
+        "version": "0.0.1",
+        "mainFile": "index.ts",
+        "rootDir": "i18n/i18next/helper"
+    },
+    "react-i18next/helper": {
+        "scope": "",
+        "version": "",
+        "defaultScope": "bit-foundations.i18n",
+        "mainFile": "index.ts",
+        "rootDir": "i18n/react-i18next/helper",
+        "config": {
+            "teambit.react/react": {},
+            "teambit.envs/envs": {
+                "env": "teambit.react/react"
+            }
+        }
+    },
+    "react-version-envs/react-18-env": {
+        "scope": "bit-foundations.react",
+        "version": "0.0.3",
+        "mainFile": "index.ts",
+        "rootDir": "react/react-version-envs/react-18-env"
+    },
+    "single-spa/angular/angular13/importmap": {
+        "scope": "bit-foundations.apps",
+        "version": "0.0.4",
+        "mainFile": "index.ts",
+        "rootDir": "apps/single-spa/angular/angular13/importmap"
+    },
+    "single-spa/angular/webpack-transformer": {
+        "scope": "bit-foundations.apps",
+        "version": "0.0.2",
+        "mainFile": "index.ts",
+        "rootDir": "apps/single-spa/angular/webpack-transformer"
+    },
+    "single-spa/react/webpack-transformer": {
+        "scope": "bit-foundations.apps",
+        "version": "0.0.3",
+        "mainFile": "index.ts",
+        "rootDir": "apps/single-spa/react/webpack-transformer"
+    },
     "tailwind/webpack-transformer": {
         "scope": "bit-foundations.styling",
-        "version": "0.0.5",
+        "version": "0.0.6",
         "mainFile": "index.ts",
         "rootDir": "styling/tailwind/webpack-transformer"
     },
     "templates/styling-templates": {
         "scope": "bit-foundations.styling",
-        "version": "0.0.2",
+        "version": "0.0.3",
         "mainFile": "index.ts",
         "rootDir": "styling/styling-templates"
+    },
+    "typescript/jsx-transform": {
+        "scope": "bit-foundations.env-configs",
+        "version": "0.0.1",
+        "mainFile": "index.ts",
+        "rootDir": "env-configs/typescript/jsx-transform"
+    },
+    "umd/webpack-transformer": {
+        "scope": "bit-foundations.styling",
+        "version": "0.0.1",
+        "mainFile": "index.ts",
+        "rootDir": "deploy/umd/webpack-transformer"
     },
     "$schema-version": "14.9.0"
 }
