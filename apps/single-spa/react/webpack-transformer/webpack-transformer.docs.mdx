@@ -1,0 +1,30 @@
+---
+labels: ['module']
+description: 'A general purpose node module'
+---
+
+## Usage
+
+Use this webpack transformer with a bit app-type component to produce a react single-spa output. 
+
+Supply it with options in the form of:
+
+``` js
+const opts: any = {
+  orgName: "teambit-singlespa",
+  projectName: "react-example",
+  orgPackagesAsExternal: true,
+  rootDirectoryLevel: 1,
+  webpackConfigEnv: {
+      standalone: false,
+  },
+  standaloneOptions: {},
+};
+```
+
+For details on how each item is used and its effect on your output bundle, see the transformer code itself.
+
+:::note 
+The `orgName` value is important as webpack will automatically assign `@<org-name>` as an external dependency for the application, to be supplied to the single-spa 
+application via importmap. It has no relation to your bit organisation, so feel free to choose any name you like - and then use it consistently in your single-spa setup.
+:::

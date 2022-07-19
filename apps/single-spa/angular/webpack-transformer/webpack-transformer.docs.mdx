@@ -1,0 +1,15 @@
+---
+labels: ['single-spa', 'angular', 'webpack', 'transformer']
+description: 'A webpack transformer for configuring Angular bit app components as a single-spa application'
+---
+
+## Description
+
+This webpack transformer can be used in conjunction with a Bit Angular-App component to configure that app component as a consumable single-spa application.
+
+## Usage
+
+In the `.ng-app.ts` file of the angular-app component, add this transformer to the `webpackTransformers` array, and provide it with the angularOptions in the same file as
+the input parameter.
+
+This will then configure the webpack bundler for the app to output a single-spa bundle to be consumed inside any single-spa root application. 
