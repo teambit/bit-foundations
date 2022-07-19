@@ -1,0 +1,13 @@
+{
+  "imports": {
+    "single-spa-angular": "https://cdn.jsdelivr.net/npm/@esm-bundle/single-spa-angular@6.3.1/system/es2015/ivy/angular-single-spa-angular.min.js",
+    "single-spa-angular/internals": "https://cdn.jsdelivr.net/npm/@esm-bundle/single-spa-angular@6.3.1/system/es2015/ivy/angular-single-spa-angular-internals.min.js",
+    "@angular/core": "https://cdn.jsdelivr.net/npm/@esm-bundle/angular__core@13.3.0/system/es2015/ivy/angular-core.min.js",
+    "@angular/common": "https://cdn.jsdelivr.net/npm/@esm-bundle/angular__common@13.3.0/system/es2015/ivy/angular-common.min.js",
+    "@angular/router": "https://cdn.jsdelivr.net/npm/@esm-bundle/angular__router@13.3.1/system/es2015/ivy/angular-router.min.js",
+    "@angular/platform-browser": "https://cdn.jsdelivr.net/npm/@esm-bundle/angular__platform-browser@13.3.1/system/es2015/ivy/angular-platform-browser.min.js",
+    "rxjs": "https://cdn.jsdelivr.net/npm/@esm-bundle/rxjs@6.6.3-fix.0/system/es2015/rxjs.min.js",
+    "rxjs/operators": "https://cdn.jsdelivr.net/npm/@esm-bundle/rxjs@6.6.3-fix.0/system/es2015/rxjs-operators.min.js"
+  }
+} 
+

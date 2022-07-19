@@ -1,0 +1,16 @@
+---
+labels: ['import map', 'single-spa', 'angular', 'angular13']
+description: 'An import map json for using an angular13 component inside a single-spa application'
+---
+
+## Description
+
+This component exports a json containing the required importmap for loading angular13-relevant shared dependencies, in order to use an Angular13 component 
+inside a single-spa application.
+
+## Usage
+
+To consume the import map, install this component in your single-spa root-config application, and then add the following line to the index.ejs file to add this import-map to
+your single-spa app:
+
+`<script type="systemjs-importmap" src="./node_modules/@bit-foundations.apps/single-spa/angular/angular13/importmap.json"></script>`
