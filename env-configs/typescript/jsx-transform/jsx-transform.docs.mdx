@@ -1,0 +1,35 @@
+---
+labels: ['typescript', 'jsx transform', 'transformer', 'env']
+description: 'ts transformer for configuring a custom env to use the jsx transform'
+---
+
+## Overview
+
+This is a very simple typescript transformer for adding the required configuration for transpiling code that uses
+React's [jsx transform](https://reactjs.org/blog/2020/09/22/introducing-the-new-jsx-transform.html) (react 17+).
+
+All it does is set the 'jsx' field in `compilerOptions` to either `react-jsx` (full build) or `react-jsxdev` (local UI build).
+
+Use it like so inside the `main.runtime.ts` file in your [custom env](https://bit.dev/docs/envs/composing-env):
+``` ts
+// your env's main.runtime.ts file
+import { 
+  devConfigTransformer, 
+  buildConfigTransformer 
+} from '@bit-foundations/env-configs.typescript.jsx-transform';
+
+
+// inside provider function
+const tsModifiers: UseTypescriptModifiers = {
+    devConfig: [devConfigTransformer],
+    buildConfig: [buildConfigTransformer],
+};
+
+const envTsTransform = <env-being-customised>.useTypescript(tsModifiers);
+```
+(replace the `<env-being-customised>` with the specific env you are customising - e.g. if this is a customisation of the `react` env then 
+you would use `react.useTypescript`)
+
+:::tip
+You can combine multiple typescript transformers together, by adding them all to the respective `devConfig` and `buildConfig` tsModifier arrays 
+:::
